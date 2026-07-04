@@ -1,0 +1,26 @@
+# Use a lightweight Python image to keep the container small and fast
+FROM python:3.10-slim
+
+# Prevent Python from writing .pyc files (saves space/time)
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Force Python stdout/stderr to be unbuffered (ensures logs appear immediately in Docker)
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy only the requirements file first to leverage Docker layer caching
+COPY requirements.txt .
+
+# Install dependencies without caching to keep the image size down
+RUN pip install --default-timeout=1000 --no-cache-dir -r requirements.txt
+
+# Copy the rest of the backend source code into the container
+COPY . .
+
+# Expose port 8000 for the FastAPI server communication
+EXPOSE 8000
+
+# Command to start the uvicorn server with hot-reloading enabled
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

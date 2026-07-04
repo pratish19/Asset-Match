@@ -1,0 +1,79 @@
+# Docker Compose Configuration for ASSETMATCH
+# Orchestrates the database, backend API, and frontend UI.
+
+
+
+services:
+  # ---------------------------------------------------------
+  # 1. Database Service (PostgreSQL + pgvector)
+  # ---------------------------------------------------------
+  db:
+    # Using pgvector for vector embeddings support required by ML features
+    image: ankane/pgvector:latest 
+    container_name: assetmatch_db
+    restart: unless-stopped
+    environment:
+      # Note: In a production environment, these should be moved to a .env file
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=asset_db
+    volumes:
+      # Persist database data across container restarts
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - asset_network
+
+  # ---------------------------------------------------------
+  # 2. Backend Service (Python API)
+  # ---------------------------------------------------------
+  backend:
+    build: ./backend
+    container_name: assetmatch_backend
+    restart: unless-stopped
+    volumes:
+      # Mount local directory for hot-reloading during development
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      # Ensure the database is up before starting the backend
+      - db
+    networks:
+      - asset_network
+
+  # ---------------------------------------------------------
+  # 3. Frontend Service (ReactJS)
+  # ---------------------------------------------------------
+  frontend:
+    build: ./frontend
+    container_name: assetmatch_frontend
+    restart: unless-stopped
+    volumes:
+      # Mount local directory for hot-reloading
+      - ./frontend:/app
+      # Prevent local node_modules from overwriting the container's node_modules
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      # Enable polling for file changes (useful for Vite/React hot reloading in Docker)
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - asset_network
+
+# ---------------------------------------------------------
+# Persistent Volumes
+# ---------------------------------------------------------
+volumes:
+  postgres_data:
+    # Named volume to keep DB data safe when containers are removed
+
+# ---------------------------------------------------------
+# Custom Networks
+# ---------------------------------------------------------
+networks:
+  asset_network:
+    driver: bridge
+    # Dedicated bridge network allows containers to communicate by service name
