@@ -1,6 +1,6 @@
 # ASSETMATCH
 
-An AI-powered visual reserve image search engine engineered to solve workflow bottlenecks in digital studios. Find the exact background, sprite, or texture you need—simply by uploading a reference image.
+An AI-powered visual reserve image search engine engineered to solve workflow bottlenecks in digital studios. Find the exact background, character or texture you need—simply by uploading a reference image.
 
 ---
 
@@ -125,12 +125,19 @@ Note: On the very first startup, the backend will automatically extract vectors 
 5. **Result Delivery:** The database returns the closest matches, which the frontend maps into a responsive 4-column grid for the user to preview or download.
 
 **Engine Landing Page**
-<img width="1352" height="641" alt="image" src="https://github.com/user-attachments/assets/52418cb2-2c23-45b1-aea5-7dbce6faedc1" />
+
+<img width="550" height="439" alt="image" src="https://github.com/user-attachments/assets/191d46ce-277c-453f-8f16-f9e13403bd3f" />
+
 **High similarity threshold**
+
 <img width="556" height="492" alt="image" src="https://github.com/user-attachments/assets/32a3ae5a-3f21-4b08-b9c1-64829fb971e0" />
+
 **Low similarity threshold**
+
 <img width="558" height="420" alt="image" src="https://github.com/user-attachments/assets/eb1ff979-f9d7-4240-919d-cc579209bbb7" />
-**Historyd**
+
+**History Tab**
+
 <img width="554" height="410" alt="image" src="https://github.com/user-attachments/assets/c307f01a-b6a7-4c81-9d0e-09103d8834f6" />
 
 📄 License
@@ -144,5 +151,6 @@ Distributed under the MIT License. See LICENSE for more information.
 **Dummy Dataset:** Used sample open-source visual assets (tagged Kaggle_Batch_01 in the database) loaded automatically via seed.py.
 
 
-*Developed by Pratish Sharma.*
-Email: pratishsharma19@gmail.com
+**Developed by Pratish Sharma.**
+
+**Email:** pratishsharma19@gmail.com
