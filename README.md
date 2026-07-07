@@ -1,6 +1,6 @@
 # ASSETMATCH
 
-An AI-powered visual asset search engine engineered to solve workflow bottlenecks in digital studios. Find the exact background, sprite, or texture you need—simply by uploading a reference image.
+An AI-powered visual reserve image search engine engineered to solve workflow bottlenecks in digital studios. Find the exact background, sprite, or texture you need—simply by uploading a reference image.
 
 ---
 
@@ -103,14 +103,15 @@ You only need one thing installed on your machine to run this entire stack:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/ASSETMATCH.git](https://github.com/yourusername/ASSETMATCH.git)
-   cd ASSETMATCH
+   git clone REPO_URL
+   cd Asset-Match
 
 2. Build and spin up the containers using Docker Compose:
-  ```Bash
-  docker-compose up --build
+   ```bash
+   docker-compose up --build
+   docker-compose up
 
-3. Access the application:
+4. Access the application:
 
 Frontend UI: http://localhost:3000
 
