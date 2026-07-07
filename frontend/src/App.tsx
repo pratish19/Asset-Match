@@ -210,8 +210,8 @@ function App() {
       <footer className="footer">
         <p>
           AssetMatch Vector Engine — 
-          <a href="#" target="_blank" rel="noopener noreferrer"> GitHub Repository </a> | 
-          <a href="#" target="_blank" rel="noopener noreferrer"> Documentation </a>
+          <a href="https://github.com/pratish19/Asset-Match" target="_blank" rel="noopener noreferrer"> GitHub Repository </a> | 
+          <a href="https://drive.google.com/drive/folders/1B_40YpnOIqCEi3z5ocCGpUXM4R8ujn95?usp=sharing" target="_blank" rel="noopener noreferrer"> Documentation </a>
         </p>
       </footer>
     </div>
