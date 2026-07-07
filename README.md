@@ -11,15 +11,13 @@ An AI-powered visual reserve image search engine engineered to solve workflow bo
 4. [Tools Used to Realize Project](#-tools-used-to-realize-project)
 5. [Steps Made to Prepare Data Structure](#-steps-made-to-prepare-data-structure)
 6. [Leveraging Algorithm for this System](#-leveraging-algorithm-for-this-system)
-7. [Working of the Application](#-working-of-the-application)
-8. [Getting Started](#-getting-started)
+7. [Getting Started](#-getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation (Docker)](#installation-docker)
-9. [Contributing](#-contributing)
-10. [License](#-license)
-11. [Contact](#-contact)
-12. [Acknowledgements](#-acknowledgements)
-13. [Source Declaration](#-source-declaration)
+8. [Working of the Application](#-working-of-the-application)
+9. [License](#-license)
+10. [Acknowledgements](#-acknowledgements)
+11. [Source Declaration](#-source-declaration)
 
 ---
 
@@ -83,16 +81,6 @@ The core of AssetMatch relies on two primary algorithmic concepts:
 
 ---
 
-## ⚙️ Working of the Application
-
-1. **User Input:** The user drags and drops an image into the React frontend.
-2. **API Processing:** The image is sent via `multipart/form-data` to the FastAPI backend.
-3. **Vectorization:** The backend ML engine converts the uploaded bytes into a normalized tensor and extracts the feature vector.
-4. **Vector Search:** FastAPI constructs a dynamic SQL query, combining vector distance calculations with the user's UI filters (aspect ratio, file type).
-5. **Result Delivery:** The database returns the closest matches, which the frontend maps into a responsive 4-column grid for the user to preview or download.
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -128,18 +116,22 @@ Note: On the very first startup, the backend will automatically extract vectors 
 
 **GET /api/download/{filename} :** Serves matched files as an application/octet-stream download.
 
-🤝 Contributing
-Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+## ⚙️ Working of the Application
 
-Fork the Project
+1. **User Input:** The user drags and drops an image into the React frontend.
+2. **API Processing:** The image is sent via `multipart/form-data` to the FastAPI backend.
+3. **Vectorization:** The backend ML engine converts the uploaded bytes into a normalized tensor and extracts the feature vector.
+4. **Vector Search:** FastAPI constructs a dynamic SQL query, combining vector distance calculations with the user's UI filters (aspect ratio, file type).
+5. **Result Delivery:** The database returns the closest matches, which the frontend maps into a responsive 4-column grid for the user to preview or download.
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
+**Engine Landing Page**
+<img width="1352" height="641" alt="image" src="https://github.com/user-attachments/assets/52418cb2-2c23-45b1-aea5-7dbce6faedc1" />
+**High similarity threshold**
+<img width="556" height="492" alt="image" src="https://github.com/user-attachments/assets/32a3ae5a-3f21-4b08-b9c1-64829fb971e0" />
+**Low similarity threshold**
+<img width="558" height="420" alt="image" src="https://github.com/user-attachments/assets/eb1ff979-f9d7-4240-919d-cc579209bbb7" />
+**Historyd**
+<img width="554" height="410" alt="image" src="https://github.com/user-attachments/assets/c307f01a-b6a7-4c81-9d0e-09103d8834f6" />
 
 📄 License
 Distributed under the MIT License. See LICENSE for more information.
