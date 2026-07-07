@@ -1,4 +1,4 @@
-# ASSETMATCH 🎨🔍
+# ASSETMATCH
 
 An AI-powered visual asset search engine engineered to solve workflow bottlenecks in digital studios. Find the exact background, sprite, or texture you need—simply by uploading a reference image.
 
