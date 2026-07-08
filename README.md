@@ -15,7 +15,7 @@ An AI-powered visual reserve image search engine engineered to solve workflow bo
     - [Prerequisites](#prerequisites)
     - [Installation (Docker)](#installation-docker)
 8. [Working of the Application](#-working-of-the-application)
-9. [License](#-license)
+9. [User Manual](#-user-manual)
 10. [Acknowledgements](#-acknowledgements)
 11. [Source Declaration](#-source-declaration)
 
@@ -124,24 +124,23 @@ Note: On the very first startup, the backend will automatically extract vectors 
 4. **Vector Search:** FastAPI constructs a dynamic SQL query, combining vector distance calculations with the user's UI filters (aspect ratio, file type).
 5. **Result Delivery:** The database returns the closest matches, which the frontend maps into a responsive 4-column grid for the user to preview or download.
 
-**Engine Landing Page**
+## User Manual
+**Engine Landing Page -> Drag&Drop, paste image, browse locally a png, jpg (eg. tree, cloud, house) -> check result**
 
 <img width="550" height="439" alt="image" src="https://github.com/user-attachments/assets/191d46ce-277c-453f-8f16-f9e13403bd3f" />
 
-**High similarity threshold**
+**High similarity threshold: Click Filter Icon -> change threshold to high -> apply search -> get distinct images**
 
 <img width="556" height="492" alt="image" src="https://github.com/user-attachments/assets/32a3ae5a-3f21-4b08-b9c1-64829fb971e0" />
 
-**Low similarity threshold**
+**Low similarity threshold: Click Filter Icon -> change threshold to low -> apply search -> get highly similar images**
 
 <img width="558" height="420" alt="image" src="https://github.com/user-attachments/assets/eb1ff979-f9d7-4240-919d-cc579209bbb7" />
 
-**History Tab**
+**History Tab: Click History Icon -> switch between previously searched images**
 
 <img width="554" height="410" alt="image" src="https://github.com/user-attachments/assets/c307f01a-b6a7-4c81-9d0e-09103d8834f6" />
 
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
 
 ## Declarations & Acknowledgments
 **ML Model:** Utilized open-source PyTorch ResNet18 (IMAGENET1K_V1 weights).
